@@ -1,25 +1,31 @@
-﻿
-Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 17
-VisualStudioVersion = 17.7.34031.279
-MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "C# ของต่อ", "C# ของต่อ\C# ของต่อ.csproj", "{3A2F62E4-1772-4EB9-BF73-3F783BDB8899}"
-EndProject
-Global
-	GlobalSection(SolutionConfigurationPlatforms) = preSolution
-		Debug|Any CPU = Debug|Any CPU
-		Release|Any CPU = Release|Any CPU
-	EndGlobalSection
-	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{3A2F62E4-1772-4EB9-BF73-3F783BDB8899}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3A2F62E4-1772-4EB9-BF73-3F783BDB8899}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3A2F62E4-1772-4EB9-BF73-3F783BDB8899}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3A2F62E4-1772-4EB9-BF73-3F783BDB8899}.Release|Any CPU.Build.0 = Release|Any CPU
-	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {002DA714-0647-4B84-B7B3-10284642C162}
-	EndGlobalSection
-EndGlobal
+using System;
+using System.Collections.Generic;
+using System.Data;
+using System.IO;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace C__ของต่อ
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            //bmi calculate
+            Console.WriteLine("Please input your weight(kg) here!! : ");
+            string weight_input_kg = Console.ReadLine();
+            double weight_kg = double.Parse(weight_input_kg);
+
+            Console.WriteLine("Please input your height(cm) here!! : ");
+            string height_input_cm = Console.ReadLine();
+            double height_cm = double.Parse(height_input_cm);
+            double height_m = height_cm / 100;
+
+            double calculate = weight_kg / Math.Pow(height_m, 2);
+            float bmi = (float)calculate;
+            Console.WriteLine("Your bmi is : {0}", bmi);
+            Console.ReadKey();
+        }
+    }
+}
